@@ -39,7 +39,7 @@ export class InputQuestionComponent implements OnInit {
 
 
     this.firebaseService.uploadProposition(proposition).then(() => {
-      alert('Stelling geplaatst!')
+      alert('Stelling geplaatst!');
       this.router.navigate(['/']);
     });
 
