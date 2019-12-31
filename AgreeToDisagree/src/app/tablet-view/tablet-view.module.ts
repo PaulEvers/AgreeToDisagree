@@ -4,12 +4,14 @@ import { TabletComponent } from './tablet/tablet.component';
 import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SuccesComponent } from './succes/succes.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
   declarations: [TabletComponent, SuccesComponent],
   imports: [
     CommonModule,
+    RouterModule,
     MatButtonModule,
     ReactiveFormsModule
   ],
