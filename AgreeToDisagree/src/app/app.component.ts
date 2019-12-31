@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ModeService } from './core/services/mode.service';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +7,6 @@ import { ModeService } from './core/services/mode.service';
 })
 export class AppComponent {
 
-  constructor(public modeService: ModeService) {
+  constructor() {
   }
 }

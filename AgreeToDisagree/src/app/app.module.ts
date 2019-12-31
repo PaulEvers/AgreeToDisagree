@@ -8,10 +8,15 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
+import { InputQuestionViewModule } from './input-question-view/input-question-view.module';
+import { KlankbordViewModule } from './klankbord-view/klankbord-view.module';
+import { TabletViewModule } from './tablet-view/tablet-view.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -19,6 +24,9 @@ import { MatButtonModule } from '@angular/material/button';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     BrowserAnimationsModule,
+    InputQuestionViewModule,
+    KlankbordViewModule,
+    TabletViewModule,
     MatButtonModule,
   ],
   providers: [],

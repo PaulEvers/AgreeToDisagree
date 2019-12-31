@@ -1,10 +1,1 @@
-<ng-container *ngIf="!modeService.hasSelectedMode; else router">
-
-  <button mat-raised-button color="primary" class="cus-button">Voer een vraag in</button>
-  <button mat-raised-button color="primary" class="cus-button">Activeer tablet-view</button>
-  <button mat-raised-button color="primary" class="cus-button">Activeer klankbord</button>
-
-</ng-container>
-<ng-template #router>
-  <router-outlet></router-outlet>
-</ng-template>
+<router-outlet></router-outlet>
