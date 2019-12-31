@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Answer } from 'src/app/core/classes/Answer';
+import { FirebaseService } from 'src/app/core/services/firebase.service';
 
 @Component({
   selector: 'app-tablet',
@@ -11,7 +12,9 @@ export class TabletComponent implements OnInit {
 
   answerForm: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(
+    private fb: FormBuilder,
+    private firebaseService: FirebaseService) { }
 
   ngOnInit() {
     this.initForm();
@@ -33,6 +36,6 @@ export class TabletComponent implements OnInit {
     answer.stance = this.answerForm.get('stance').value;
     answer.position = this.answerForm.get('position').value;
 
-    console.log(answer);
+    this.firebaseService.uploadAnswer('7EqSAhlTFuWfhAK6NCa8', answer);
   }
 }

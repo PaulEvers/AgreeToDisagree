@@ -3,7 +3,56 @@
 html,
 body {
   height: 100%;
-  background: #9C9B9B;
+  //background: #9C9B9B;
+  background: linear-gradient(313deg, #b4b4b4, #3f3f3f);
+  background-size: 400% 400%;
+
+  -webkit-animation: bgGradient 120s ease infinite;
+  -moz-animation: bgGradient 120s ease infinite;
+  animation: bgGradient 120s ease infinite;
+}
+
+
+@-webkit-keyframes bgGradient {
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@-moz-keyframes bgGradient {
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@keyframes bgGradient {
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
 }
 
 body {

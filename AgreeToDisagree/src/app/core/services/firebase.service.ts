@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Proposition } from '../classes/Proposition';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { Answer } from '../classes/Answer';
 
 @Injectable({
   providedIn: 'root'
@@ -18,5 +19,15 @@ export class FirebaseService {
         doc.update({ id: doc.id });
       })
       .catch(err => console.log(err));
+  }
+
+  uploadAnswer(questionId: string, answer: Answer) {
+    const aString = JSON.stringify(answer);
+    const aObject = JSON.parse(aString);
+
+    return this.db.collection('propositions').doc(questionId).collection('answers')
+      .add(aObject).then(doc => {
+        doc.update({ id: doc.id });
+      }).catch(err => console.log(err));
   }
 }
