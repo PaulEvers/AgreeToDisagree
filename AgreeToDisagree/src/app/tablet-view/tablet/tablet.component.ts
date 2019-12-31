@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-tablet',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TabletComponent implements OnInit {
 
-  constructor() { }
+  answerForm: FormGroup;
+
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.initForm();
   }
 
+  private initForm() {
+    this.answerForm = this.fb.group({
+      age: [1, [Validators.required]],
+      profession: ['', [Validators.required]],
+      stance: ['', [Validators.required]],
+      position: ['', [Validators.required]]
+    });
+  }
+
+  submitAnswers() {
+
+  }
 }

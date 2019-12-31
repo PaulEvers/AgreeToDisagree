@@ -1,1 +1,42 @@
-<p>tablet works!</p>
+<form [formGroup]="answerForm" (ngSubmit)="submitAnswers()">
+  <div class="question-container">
+    <div class="question-title-container has-text-centered">
+      <p>WAT IS JE LEEFTIJD</p>
+    </div>
+    <div class="input-container">
+      <input type="number" name="quantity" min="1" max="130">
+    </div>
+  </div>
+
+  <div class="question-container">
+    <div class="question-title-container has-text-centered">
+      <p>WAT IS JE BEROEP/STUDIE/BEZIGHEID?</p>
+    </div>
+    <div class="input-container">
+      <textarea placeholder="..."></textarea>
+    </div>
+  </div>
+
+
+  <div class="question-container">
+    <div class="question-title-container has-text-centered">
+      <p>EENS / NEUTRAAL / ONEENS?</p>
+    </div>
+    <div class="input-container">
+      <textarea placeholder="..."></textarea>
+    </div>
+  </div>
+
+  <div class="question-container">
+    <div class="question-title-container has-text-centered">
+      <p>WAAROM NEEM JE DEZE POSITIE?</p>
+    </div>
+    <div class="input-container">
+      <textarea placeholder="..."></textarea>
+    </div>
+  </div>
+
+  <div class="question-container">
+    <button mat-button [disabled]="!answerForm.valid">Verstuur</button>
+  </div>
+</form>

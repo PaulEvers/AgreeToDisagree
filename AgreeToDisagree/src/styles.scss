@@ -19,3 +19,21 @@ body {
 form {
   display: unset;
 }
+
+textarea {
+  resize: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 20px;
+}
+
+.submit-container {
+  margin-top: 5%;
+  width: 37%;
+}
+
+.mat-button {
+  float: right;
+  background-color: white;
+}
