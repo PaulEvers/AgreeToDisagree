@@ -4,6 +4,7 @@ import { InputQuestionComponent } from './input-question-view/input-question/inp
 import { KlankbordComponent } from './klankbord-view/klankbord/klankbord.component';
 import { TabletComponent } from './tablet-view/tablet/tablet.component';
 import { HomeComponent } from './home/home.component';
+import { SuccesComponent } from './tablet-view/succes/succes.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'tablet',
     component: TabletComponent,
+  },
+  {
+    path: 'succes',
+    component: SuccesComponent,
   },
 ];
 

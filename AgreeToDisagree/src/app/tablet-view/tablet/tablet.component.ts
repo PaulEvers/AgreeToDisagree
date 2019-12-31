@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Answer } from 'src/app/core/classes/Answer';
 import { FirebaseService } from 'src/app/core/services/firebase.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tablet',
@@ -14,7 +15,8 @@ export class TabletComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private firebaseService: FirebaseService) { }
+    private firebaseService: FirebaseService,
+    private router: Router) { }
 
   ngOnInit() {
     this.initForm();
@@ -36,6 +38,8 @@ export class TabletComponent implements OnInit {
     answer.stance = this.answerForm.get('stance').value;
     answer.position = this.answerForm.get('position').value;
 
-    this.firebaseService.uploadAnswer('7EqSAhlTFuWfhAK6NCa8', answer);
+    this.firebaseService.uploadAnswer('7EqSAhlTFuWfhAK6NCa8', answer).then(() => {
+      this.router.navigate(['/succes']);
+    });
   }
 }
