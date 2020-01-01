@@ -1,8 +1,104 @@
 .klankbord-container {
-    padding: 5%;
-    div {
-        margin: 2%;
-        background-color: white;
-        height: 20vh;
+  padding: 3%;
+
+  div {
+    margin: 2%;
+    background-color: white;
+    height: 400px;
+  }
+}
+
+.black {
+  background-color: black !important;
+
+  p {
+    color: white;
+  }
+}
+
+.stelling {
+  padding: 2%;
+
+  p {
+    font-size: 5vw;
+  }
+}
+
+// Checkered
+
+table {
+  width: 100%;
+  height: 100%;
+}
+
+.age {
+  td {
+    height: 100px;
+    width: 100px;
+    background-color: white;
+    vertical-align: middle;
+
+    p {
+      font-size: 3vw;
+      color: black;
+      text-align: center !important;
     }
+  }
+
+  tr:nth-child(even) td:nth-child(odd),
+  tr:nth-child(odd) td:nth-child(even) {
+    background: black;
+
+    p {
+      color: white;
+    }
+  }
+}
+
+// Profession
+
+.prof {
+  td {
+    background-color: black;
+    vertical-align: middle;
+
+    p {
+      font-size: 2vw;
+      color: white;
+      text-align: center !important;
+    }
+  }
+
+  tr:nth-child(even) td:nth-child(odd),
+  tr:nth-child(odd) td:nth-child(even) {
+    background: white;
+
+    p {
+      color: black;
+    }
+  }
+}
+
+// Marquee
+
+.marq {
+  td {
+    background-color: black;
+    vertical-align: middle;
+
+    marquee {
+      font-size: 2vw;
+      color: white;
+      text-align: center !important;
+    }
+  }
+
+  tr:nth-child(even) td:nth-child(odd),
+  tr:nth-child(odd) td:nth-child(even) {
+    background: white;
+
+    marquee {
+      color: black;
+    }
+  }
 }
