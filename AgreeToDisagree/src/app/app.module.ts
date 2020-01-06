@@ -12,6 +12,7 @@ import { InputQuestionViewModule } from './input-question-view/input-question-vi
 import { KlankbordViewModule } from './klankbord-view/klankbord-view.module';
 import { TabletViewModule } from './tablet-view/tablet-view.module';
 import { HomeComponent } from './home/home.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { HomeComponent } from './home/home.component';
     KlankbordViewModule,
     TabletViewModule,
     MatButtonModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [],
   bootstrap: [AppComponent]
