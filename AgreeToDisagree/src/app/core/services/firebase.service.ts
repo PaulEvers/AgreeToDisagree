@@ -30,4 +30,11 @@ export class FirebaseService {
         doc.update({ id: doc.id });
       }).catch(err => console.log(err));
   }
+
+  getLatestProposition() {
+    this.db.collection('propositions').get().subscribe(props => {
+      console.log(props);
+    });
+  }
+
 }

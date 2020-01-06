@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FirebaseService } from 'src/app/core/services/firebase.service';
 
 @Component({
   selector: 'app-klankbord',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class KlankbordComponent implements OnInit {
 
-  constructor() { }
+  constructor(private firebaseService: FirebaseService) { }
 
   ngOnInit() {
+    this.firebaseService.getLatestProposition();
   }
 
 }
