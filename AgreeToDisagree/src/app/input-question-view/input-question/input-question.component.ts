@@ -27,7 +27,7 @@ export class InputQuestionComponent implements OnInit {
     this.questionForm = this.fb.group({
       proposition: ['', [Validators.required]],
       extra: ['', [Validators.required]],
-      agreed: [false, [Validators.requiredTrue]]
+      // agreed: [false, [Validators.requiredTrue]]
     });
   }
 

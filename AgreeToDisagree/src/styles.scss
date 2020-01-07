@@ -11,8 +11,10 @@ body {
   -webkit-animation: bgGradient 120s ease infinite;
   -moz-animation: bgGradient 120s ease infinite;
   animation: bgGradient 120s ease infinite;
+  margin: 0;
+  height: 100%;
+  overflow: hidden
 }
-
 
 @-webkit-keyframes bgGradient {
   0% {
@@ -56,9 +58,12 @@ body {
   }
 }
 
+* {
+  font-family: Nimbus, "Helvetica Neue", sans-serif;
+}
+
 body {
   margin: 0;
-  font-family: Nimbus, "Helvetica Neue", sans-serif;
 }
 
 .center {
@@ -78,11 +83,6 @@ textarea {
   padding: 20px;
 }
 
-.submit-container {
-  margin-top: 5%;
-  width: 37%;
-}
-
 .mat-button {
   float: right;
   background-color: white;
@@ -93,8 +93,16 @@ textarea {
 // Fonts
 @font-face {
   font-family: 'nimbus';
-  src:url($nimbus-reg-woff2-font-path) format('woff2'),
-      url($nimbus-reg-woff-font-path) format('woff');
+  src: url($nimbus-reg-woff2-font-path) format('woff2'),
+    url($nimbus-reg-woff-font-path) format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'nimbusBold';
+  src: url($nimbus-bol-woff2-font-path) format('woff2'),
+    url($nimbus-bol-woff-font-path) format('woff');
   font-weight: normal;
   font-style: normal;
 }

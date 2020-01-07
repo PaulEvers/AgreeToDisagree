@@ -1,5 +1,5 @@
 .input-container {
-  width: 37%;
+  width: 80%;
   height: 50%;
 }
 
@@ -8,7 +8,8 @@
 .textarea-stelling {
   background-color: black;
   color: white;
-  font-size: 4vw;
+  font-size: 10vw;
+  font-family: Nimbus, "Helvetica Neue", sans-serif;
   height: 100%;
 }
 
@@ -27,7 +28,8 @@
 }
 
 .textarea-extra {
-  font-size: 2vw;
+  font-family: Nimbus, "Helvetica Neue", sans-serif;
+  font-size: 3.7vw;
   height: 100%;
   color: black;
 }
@@ -42,6 +44,16 @@
 
 // Button container
 
+.submit-container {
+  margin-top: 5%;
+  width: 80%;
+  height: 12%;
+}
+
+::ng-deep .mat-button-wrapper {
+  font-family: NimbusBold, "Helvetica Neue", sans-serif;
+  font-size: 2vw;
+}
 
 ::ng-deep .mat-checkbox-label {
     color: white;
