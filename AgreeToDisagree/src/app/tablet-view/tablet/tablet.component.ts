@@ -42,4 +42,10 @@ export class TabletComponent implements OnInit {
       this.router.navigate(['/succes']);
     });
   }
+
+  rangeChanged() {
+    document.body.style.backgroundColor = "red";
+    console.log('hoi');
+
+  }
 }

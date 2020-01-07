@@ -24,7 +24,8 @@
       <p>EENS / NEUTRAAL / ONEENS?</p>
     </div>
     <div class="input-container">
-      <textarea formControlName="stance" placeholder="..."></textarea>
+      <!-- <textarea formControlName="stance" placeholder="..."></textarea> -->
+      <input (input)="rangeChanged($event)" type="range" min="0" max="100" value="50" class="range white"/>
     </div>
   </div>
 
