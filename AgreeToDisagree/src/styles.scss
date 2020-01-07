@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./fonts.scss";
 
 html,
 body {
@@ -57,7 +58,7 @@ body {
 
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: Nimbus, "Helvetica Neue", sans-serif;
 }
 
 .center {
@@ -87,4 +88,13 @@ textarea {
   background-color: white;
   width: 20%;
   height: 40%;
+}
+
+// Fonts
+@font-face {
+  font-family: 'nimbus';
+  src:url($nimbus-reg-woff2-font-path) format('woff2'),
+      url($nimbus-reg-woff-font-path) format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
