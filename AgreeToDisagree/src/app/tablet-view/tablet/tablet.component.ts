@@ -43,9 +43,9 @@ export class TabletComponent implements OnInit {
     });
   }
 
-  rangeChanged() {
-    document.body.style.backgroundColor = "red";
-    console.log('hoi');
-
+  rangeChanged(value) {
+    const rgb = 255 - ((255 / 100) * value.srcElement.value);
+    document.body.style.backgroundColor =
+      'rgb(' + rgb + ', ' + rgb + ', ' + rgb + ')';
   }
 }
