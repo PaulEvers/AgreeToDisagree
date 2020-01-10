@@ -6,9 +6,9 @@
 .weight {
   background-color: white;
   max-height: 58%;
-  width: 100%;
   margin-bottom: 5%;
   margin-left: 10%;
+  margin-right: 10%;
   padding: 20px;
 
   p {
@@ -19,16 +19,27 @@
 }
 
 .thanks {
-    background-color: black;
-    max-height: 58%;
-    width: 100%;
-    margin-bottom: 5%;
-    margin-left: 10%;
-    padding: 20px;
-  
-    p {
-      color: white;
-      font-size: 7.8vw;
-      font-weight: bold;
-    }
+  background-color: black;
+  max-height: 58%;
+  margin-bottom: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 20px;
+
+  p {
+    color: white;
+    font-size: 7.8vw;
+    font-weight: bold;
   }
+}
+
+.question-container {
+  height: 13%;
+  width: 80%;
+  margin-bottom: 5%;
+  margin-left: 10%;
+}
+
+::ng-deep .mat-button-wrapper {
+  font-size: 3vw;
+}

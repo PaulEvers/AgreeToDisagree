@@ -47,5 +47,9 @@ export class TabletComponent implements OnInit {
     const rgb = 255 - ((255 / 100) * value.srcElement.value);
     document.body.style.backgroundColor =
       'rgb(' + rgb + ', ' + rgb + ', ' + rgb + ')';
+
+    const rgbInvert = ((255 / 100) * value.srcElement.value);
+    (document.querySelector('.title') as HTMLElement).style.color =
+    'rgb(' + rgbInvert + ', ' + rgbInvert + ', ' + rgbInvert + ')';
   }
 }

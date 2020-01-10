@@ -18,14 +18,14 @@
     </div>
   </div>
 
-
   <div class="question-container">
     <div class="question-title-container has-text-centered">
       <p>EENS / NEUTRAAL / ONEENS?</p>
     </div>
     <div class="input-container">
       <!-- <textarea formControlName="stance" placeholder="..."></textarea> -->
-      <input (input)="rangeChanged($event)" type="range" min="0" max="100" value="50" class="range white"/>
+      <input formControlName="stance" (input)="rangeChanged($event)" type="range" min="0" max="100" value="50"
+        class="range white" />
     </div>
   </div>
 
