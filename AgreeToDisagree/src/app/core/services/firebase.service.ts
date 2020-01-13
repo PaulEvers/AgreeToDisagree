@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Proposition } from '../classes/Proposition';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Answer } from '../classes/Answer';
+import * as firebase from 'firebase';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,10 @@ import { Answer } from '../classes/Answer';
 export class FirebaseService {
 
   constructor(private db: AngularFirestore) { }
+
+  async getLatestProp() {
+    return (await (await this.db.collection('propositions').ref.orderBy('added', 'desc').get()).docs[0].data()) as Proposition;
+  }
 
   uploadProposition(proposition: Proposition) {
     const pString = JSON.stringify(proposition);
@@ -25,10 +30,9 @@ export class FirebaseService {
     const aString = JSON.stringify(answer);
     const aObject = JSON.parse(aString);
 
-    return this.db.collection('propositions').doc(questionId).collection('answers')
-      .add(aObject).then(doc => {
-        doc.update({ id: doc.id });
-      }).catch(err => console.log(err));
+    return this.db.collection('propositions').doc(questionId).update({
+      answers: firebase.firestore.FieldValue.arrayUnion(aObject)
+    }).catch(err => console.log(err));
   }
 
   getLatestProposition() {

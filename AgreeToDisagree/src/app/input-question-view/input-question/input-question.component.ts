@@ -36,11 +36,11 @@ export class InputQuestionComponent implements OnInit {
     proposition.added = Math.round((new Date()).getTime() / 1000);
     proposition.proposition = this.questionForm.get('proposition').value;
     proposition.extraInfo = this.questionForm.get('extra').value;
+    proposition.answers = [];
 
 
     this.firebaseService.uploadProposition(proposition).then(() => {
-      alert('Stelling geplaatst!');
-      this.router.navigate(['/']);
+      this.router.navigate(['/tablet']);
     });
 
   }

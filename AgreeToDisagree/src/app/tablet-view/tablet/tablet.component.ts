@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Answer } from 'src/app/core/classes/Answer';
 import { FirebaseService } from 'src/app/core/services/firebase.service';
 import { Router } from '@angular/router';
+import { Proposition } from 'src/app/core/classes/Proposition';
 
 @Component({
   selector: 'app-tablet',
@@ -31,14 +32,15 @@ export class TabletComponent implements OnInit {
     });
   }
 
-  submitAnswers() {
+  async submitAnswers() {
     const answer = new Answer();
     answer.age = this.answerForm.get('age').value;
     answer.profession = this.answerForm.get('profession').value;
     answer.stance = this.answerForm.get('stance').value;
     answer.position = this.answerForm.get('position').value;
 
-    this.firebaseService.uploadAnswer('7EqSAhlTFuWfhAK6NCa8', answer).then(() => {
+    const latestProp = await this.firebaseService.getLatestProp() as Proposition;
+    this.firebaseService.uploadAnswer(latestProp.id, answer).then(() => {
       this.router.navigate(['/succes']);
     });
   }
