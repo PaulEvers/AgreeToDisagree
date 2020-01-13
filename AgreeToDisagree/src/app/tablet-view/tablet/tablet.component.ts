@@ -25,8 +25,8 @@ export class TabletComponent implements OnInit {
 
   private initForm() {
     this.answerForm = this.fb.group({
-      age: [1, [Validators.required]],
-      profession: ['', [Validators.required]],
+      age: [1, [Validators.required, Validators.max(99)]],
+      profession: ['', [Validators.required, Validators.maxLength(60)]],
       stance: ['', [Validators.required]],
       position: ['', [Validators.required]]
     });

@@ -1,10 +1,8 @@
-<div class="klankbord-container">
+<div class="klankbord-container" *ngIf="(prop$ | async) as prop">
 
   <!-- Stelling -->
   <div class="black stelling has-text-centered">
-    <p>EINDHOVEN ZOU EEN
-      LAGE EMISSIEZONE
-      MOETEN INTRODUCEREN</p>
+  <p>{{prop.proposition}}</p>
   </div>
 
   <!-- Profession -->
@@ -12,35 +10,35 @@
     <table>
       <tr>
         <td>
-          <p>Test</p>
+          <p>{{professions[0]}}</p>
         </td>
         <td>
-          <p>Test</p>
+          <p>{{professions[1]}}</p>
         </td>
         <td>
-          <p>Test</p>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <p>Test</p>
-        </td>
-        <td>
-          <p>Test</p>
-        </td>
-        <td>
-          <p>Test</p>
+          <p>{{professions[2]}}</p>
         </td>
       </tr>
       <tr>
         <td>
-          <p>Test</p>
+          <p>{{professions[3]}}</p>
         </td>
         <td>
-          <p>Test</p>
+          <p>{{professions[4]}}</p>
         </td>
         <td>
-          <p>Test</p>
+          <p>{{professions[5]}}</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>{{professions[6]}}</p>
+        </td>
+        <td>
+          <p>{{professions[7]}}</p>
+        </td>
+        <td>
+          <p>{{professions[8]}}</p>
         </td>
       </tr>
     </table>

@@ -15,6 +15,11 @@ export class FirebaseService {
     return (await (await this.db.collection('propositions').ref.orderBy('added', 'desc').get()).docs[0].data()) as Proposition;
   }
 
+  async getLatestPropAsObservable() {
+    const latestProp = await this.getLatestProp();
+    return this.db.collection('propositions').doc<Proposition>(latestProp.id).valueChanges();
+  }
+
   uploadProposition(proposition: Proposition) {
     const pString = JSON.stringify(proposition);
     const pObject = JSON.parse(pString);
@@ -34,11 +39,4 @@ export class FirebaseService {
       answers: firebase.firestore.FieldValue.arrayUnion(aObject)
     }).catch(err => console.log(err));
   }
-
-  getLatestProposition() {
-    this.db.collection('propositions').get().subscribe(props => {
-      console.log(props);
-    });
-  }
-
 }

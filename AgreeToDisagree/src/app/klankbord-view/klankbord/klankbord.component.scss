@@ -59,9 +59,18 @@ table {
 // Profession
 
 .prof {
+  table {
+    table-layout: fixed;
+  }
+
   td {
     background-color: black;
     vertical-align: middle;
+    width: 33%;
+    height: 33%;
+    max-width: 33%;
+    max-height: 33%;
+    word-wrap: break-word;
 
     p {
       font-size: 2vw;
