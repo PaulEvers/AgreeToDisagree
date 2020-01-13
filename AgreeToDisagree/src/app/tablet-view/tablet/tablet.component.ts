@@ -52,6 +52,6 @@ export class TabletComponent implements OnInit {
 
     const rgbInvert = ((255 / 100) * value.srcElement.value);
     (document.querySelector('.title') as HTMLElement).style.color =
-    'rgb(' + rgbInvert + ', ' + rgbInvert + ', ' + rgbInvert + ')';
+      'rgb(' + rgbInvert + ', ' + rgbInvert + ', ' + rgbInvert + ')';
   }
 }

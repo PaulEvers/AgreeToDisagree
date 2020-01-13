@@ -14,7 +14,7 @@ export class KlankbordComponent implements OnInit {
   prop$: Observable<Proposition>;
 
   professions = new Array(9);
-  age = [];
+  ages = new Array(48);
 
   constructor(private firebaseService: FirebaseService) { }
 
@@ -31,6 +31,7 @@ export class KlankbordComponent implements OnInit {
     await (await this.firebaseService.getLatestPropAsObservable()).subscribe(prop => {
       const answers = this.shuffle(prop.answers);
       this.setProfessions(answers);
+      this.setAges(answers);
     });
   }
 
@@ -56,15 +57,17 @@ export class KlankbordComponent implements OnInit {
     });
     this.professions = this.shuffle(this.professions);
 
-
-    console.log(this.professions);
-
-    // if (this.professions.length < 9) {
-    //   this.professions.fill('',  this.professions.length - 1, 8);
-    //   this.shuffle(this.professions);
-    // }
-
-    console.log(this.professions);
-
   }
+
+  private setAges(answers: Answer[]) {
+    this.ages = new Array(48);
+    let i = 0;
+    answers.forEach(answer => {
+      this.ages[i] = answer.age;
+      i++;
+    });
+
+    this.ages = this.shuffle(this.ages);
+  }
+
 }
