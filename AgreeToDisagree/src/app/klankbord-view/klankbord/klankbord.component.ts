@@ -15,6 +15,7 @@ export class KlankbordComponent implements OnInit {
 
   professions = new Array(9);
   ages = new Array(48);
+  scrollingText = '';
 
   constructor(private firebaseService: FirebaseService) { }
 
@@ -32,6 +33,7 @@ export class KlankbordComponent implements OnInit {
       const answers = this.shuffle(prop.answers);
       this.setProfessions(answers);
       this.setAges(answers);
+      this.setTexts(answers);
     });
   }
 
@@ -68,6 +70,14 @@ export class KlankbordComponent implements OnInit {
     });
 
     this.ages = this.shuffle(this.ages);
+  }
+
+  private setTexts(answers: Answer[]) {
+    this.scrollingText = '';
+    answers.forEach(answer => {
+      const marquee = '"' + answer.position + '" - ';
+      this.scrollingText += marquee;
+    });
   }
 
 }
