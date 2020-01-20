@@ -3,28 +3,30 @@
   width: 80%;
 }
 
-.weight {
+.propInfo {
   background-color: white;
   max-height: 58%;
   margin-bottom: 5%;
   margin-left: 10%;
   margin-right: 10%;
   padding: 20px;
+  height: 20%;
+  overflow-y: scroll;
 
   p {
     color: black;
-    font-size: 7.8vw;
+    font-size: 3vw;
     font-weight: bold;
   }
 }
 
-.thanks {
+.prop {
   background-color: black;
-  max-height: 58%;
-  margin-bottom: 5%;
   margin-left: 10%;
   margin-right: 10%;
   padding: 20px;
+  height: 43%;
+  overflow-y: scroll;
 
   p {
     color: white;

@@ -5,12 +5,17 @@ import { KlankbordComponent } from './klankbord-view/klankbord/klankbord.compone
 import { TabletComponent } from './tablet-view/tablet/tablet.component';
 import { HomeComponent } from './home/home.component';
 import { SuccesComponent } from './tablet-view/succes/succes.component';
+import { QuestionComponent } from './tablet-view/question/question.component';
 
 
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
+  },
+  {
+    path: 'question',
+    component: QuestionComponent,
   },
   {
     path: 'input',

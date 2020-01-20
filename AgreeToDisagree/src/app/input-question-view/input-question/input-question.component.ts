@@ -40,7 +40,7 @@ export class InputQuestionComponent implements OnInit {
 
 
     this.firebaseService.uploadProposition(proposition).then(() => {
-      this.router.navigate(['/tablet']);
+      this.router.navigate(['/question']);
     });
 
   }

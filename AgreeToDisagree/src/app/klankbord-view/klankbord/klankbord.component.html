@@ -2,7 +2,7 @@
 
   <!-- Stelling -->
   <div class="black stelling has-text-centered">
-  <p>{{prop.proposition}}</p>
+  <p c>{{prop?.proposition | uppercase}}</p>
   </div>
 
   <!-- Profession -->
@@ -10,35 +10,35 @@
     <table>
       <tr>
         <td>
-          <p>{{professions[0]}}</p>
+          <marquee behavior="scroll" direction="left" scrollamount="5">{{professions[0]}}</marquee>
         </td>
         <td>
-          <p>{{professions[1]}}</p>
+          <marquee behavior="scroll" direction="left" scrollamount="10">{{professions[1]}}</marquee>
         </td>
         <td>
-          <p>{{professions[2]}}</p>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <p>{{professions[3]}}</p>
-        </td>
-        <td>
-          <p>{{professions[4]}}</p>
-        </td>
-        <td>
-          <p>{{professions[5]}}</p>
+          <marquee behavior="scroll" direction="left" scrollamount="15">{{professions[2]}}</marquee>
         </td>
       </tr>
       <tr>
         <td>
-          <p>{{professions[6]}}</p>
+          <marquee behavior="scroll" direction="left" scrollamount="15">{{professions[3]}}</marquee>
         </td>
         <td>
-          <p>{{professions[7]}}</p>
+          <marquee behavior="scroll" direction="left" scrollamount="5">{{professions[4]}}</marquee>
         </td>
         <td>
-          <p>{{professions[8]}}</p>
+          <marquee behavior="scroll" direction="left" scrollamount="10">{{professions[5]}}</marquee>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <marquee behavior="scroll" direction="left" scrollamount="10">{{professions[6]}}</marquee>
+        </td>
+        <td>
+          <marquee behavior="scroll" direction="left" scrollamount="15">{{professions[7]}}</marquee>
+        </td>
+        <td>
+          <marquee behavior="scroll" direction="left" scrollamount="5">{{professions[8]}}</marquee>
         </td>
       </tr>
     </table>
@@ -207,17 +207,17 @@
     <table>
       <tr>
         <td>
-        <marquee behavior="scroll" direction="left">{{scrollingText}}</marquee>
+        <marquee behavior="scroll" direction="left" scrollamount="15">{{scrollingTexts[0]}}</marquee>
         </td>
       </tr>
       <tr>
         <td>
-          <marquee behavior="scroll" direction="right">{{scrollingText}}</marquee>
+          <marquee behavior="scroll" direction="left" scrollamount="5">{{scrollingTexts[1]}}</marquee>
         </td>
       </tr>
       <tr>
         <td>
-          <marquee behavior="scroll" direction="left">{{scrollingText}}</marquee>
+          <marquee behavior="scroll" direction="left" scrollamount="10">{{scrollingTexts[2]}}</marquee>
         </td>
       </tr>
     </table>

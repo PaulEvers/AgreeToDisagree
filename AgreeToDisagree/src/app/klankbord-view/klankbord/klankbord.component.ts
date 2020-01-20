@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from 'src/app/core/services/firebase.service';
-import { Observable } from 'rxjs';
+import { Observable, interval } from 'rxjs';
 import { Proposition } from 'src/app/core/classes/Proposition';
 import { Answer } from 'src/app/core/classes/Answer';
 
@@ -12,16 +12,20 @@ import { Answer } from 'src/app/core/classes/Answer';
 export class KlankbordComponent implements OnInit {
 
   prop$: Observable<Proposition>;
+  private answers: Answer[];
 
   professions = new Array(9);
   ages = new Array(48);
-  scrollingText = '';
+
+  private scrollingInterval$ = interval(60000);
+  scrollingTexts = new Array(3);
 
   constructor(private firebaseService: FirebaseService) { }
 
   ngOnInit() {
     this.setProp$();
     this.setAnswers();
+    this.scrollingInterval$.subscribe(() => this.setTexts(this.answers));
   }
 
   private async setProp$() {
@@ -31,6 +35,7 @@ export class KlankbordComponent implements OnInit {
   private async setAnswers() {
     await (await this.firebaseService.getLatestPropAsObservable()).subscribe(prop => {
       const answers = this.shuffle(prop.answers);
+      this.answers = answers;
       this.setProfessions(answers);
       this.setAges(answers);
       this.setTexts(answers);
@@ -73,11 +78,13 @@ export class KlankbordComponent implements OnInit {
   }
 
   private setTexts(answers: Answer[]) {
-    this.scrollingText = '';
-    answers.forEach(answer => {
-      const marquee = '"' + answer.position + '" - ';
-      this.scrollingText += marquee;
-    });
+    if (!answers || answers.length === 0) { return; }
+
+    for (let i = 0; i < this.scrollingTexts.length; i++) {
+      const randomIndex = Math.floor(Math.random() * answers.length);
+      this.scrollingTexts[i] = '"' + answers[randomIndex].position + '"';
+    }
+
   }
 
 }

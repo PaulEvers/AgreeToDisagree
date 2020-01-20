@@ -6,6 +6,10 @@
   height: 7%;
 }
 
+::ng-deep .mat-raised-button.mat-primary {
+  background-color: black;
+}
+
 body {
   background-color: #DCDCDC;
 }

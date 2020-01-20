@@ -5,10 +5,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SuccesComponent } from './succes/succes.component';
 import { RouterModule } from '@angular/router';
+import { QuestionComponent } from './question/question.component';
 
 
 @NgModule({
-  declarations: [TabletComponent, SuccesComponent],
+  declarations: [TabletComponent, SuccesComponent, QuestionComponent],
   imports: [
     CommonModule,
     RouterModule,
